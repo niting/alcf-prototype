@@ -8,4 +8,13 @@
     <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).
 
     <p>If you haven't already given the documentation a read, head over to <a href="http://docs.wagtail.io/">http://docs.wagtail.io</a> to start building on Wagtail</p>
+
+		<p> Start rendering home page logic here</p>
+		<p> {{ self.overlay_text }}</p>
+
+		{% if self.image_carousel %}
+		{{ self.image_carousel }}
+		{% endif %}
 {% endblock %}
+
+{% block 

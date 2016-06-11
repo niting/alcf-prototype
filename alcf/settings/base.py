@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'embed_video',
+    'wagtail_embed_videos',
 ]
 
 MIDDLEWARE_CLASSES = [
