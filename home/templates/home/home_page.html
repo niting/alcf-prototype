@@ -3,9 +3,131 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    <h1>ALCF Homepage Test</h1>
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).
 
-    <p>If you haven't already given the documentation a read, head over to <a href="http://docs.wagtail.io/">http://docs.wagtail.io</a> to start building on Wagtail</p>
+<div>
+  <section id="home-head">
+
+    <nav class="col-sm-12 col-md-12">
+	  <div class="col-sm-2 col-md-2">Logo</div>
+	  
+	  <div class="col-sm-10 col-md-10">
+		<ul>
+          <li>Visit</li>
+          <li>Connect</li>
+          <li>Care</li>
+          <li>Learn</li>
+          <li>Events</li>
+		</ul>
+		<ul>
+          <li>Volunteer</li>
+          <li>Give</li>
+		</ul>
+	  </div>  
+    </nav>
+    
+    
+    <br><br><br>
+    Homepage Header
+
+
+
+  </section>
+  
+  <section id="pastor-showcase">
+	Pastor Showcase
+  </section>
+  
+  <section id="ads">
+	Carousel of ads
+  </section>
+  
+  <section id="events">
+	Some of the events 
+  </section>
+  
+  <section class="sitemap">
+    <div style="margin-bottom: 20px;">
+	  Address and Subscription  
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-2 col-md-2">
+	    <h4>Visit</h4>
+	    <ul>
+		  <li>Sunday Morning Worship</li>
+		  <li>Exploring Membership</li>
+		  <li>About ALCF</li>
+		  <li>Staff</li>    
+	    </ul>  
+      </div>   
+      
+      <div class="col-sm-2 col-md-2">
+      	<h4>Connect</h4>
+      	<ul>
+	     <li>Corporate Prayer & Worship</li> 	
+	     <li>Growth Groups</li> 	
+	     <li>Fellowship Groups</li> 	
+	     <li>Children</li> 	
+	     <li>Student Ministries</li> 	
+	     <li>Recovery/Support Groups</li> 	
+	     <li>Worship Service Ministry</li> 	
+	     <li>Evangelism and Local Outreach</li> 	
+	     <li>Community Involvement</li> 	
+	     <li>International Partners</li> 	
+      	</ul>	      
+      </div>
+         
+      <div class="col-sm-2 col-md-2">
+	    <h4>Care</h4>
+      	<ul>
+	     <li>One-to-One Support</li>
+	     <li>Recovery/Support Groups</li>
+	     <li>Classified Acts</li> 	
+      	</ul>
+
+      </div>   
+      
+      <div class="col-sm-2 col-md-2">
+	    <h4>Learn</h4>   
+      	<ul>
+	     <li>Messages</li>
+      	 <li>Classes@ALCF</li> 	
+      	</ul>
+
+      </div>   
+
+      <div class="col-sm-2 col-md-2">
+	    <h4>Events</h4>  
+      	<ul>
+	     <li>Events at ALCF</li>
+      	 <li>ALCF-Hosted Events</li> 	
+      	</ul>
+
+      </div> 
+      
+      
+      <div class="col-sm-2 col-md-2">
+	    <h4>Volunteer</h4>  
+      	<ul>
+	     <li>Opportunities Within ALCF</li>
+	     <li>Local and Global Outreach</li> 	
+      	</ul>
+      </div>   
+      
+      <div class="col-sm-2 col-md-2">
+	    <h4>Give</h4>  
+      	<ul>
+	     <li>Online Giving and Donations</li> 	
+      	</ul>
+
+      </div>   
+
+    </div>
+
+  </section>
+</div>
+
+
 {% endblock %}
