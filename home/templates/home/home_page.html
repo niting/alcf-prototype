@@ -1,140 +1,372 @@
 {% extends "base.html" %}
 
-{% block body_class %}template-homepage{% endblock %}
+{% block body_class %}homepage_template{% endblock %}
 
 {% block content %}
-<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-<div>
-  <section id="home-head">
-
-    <nav class="col-sm-12 col-md-12">
-	  <div class="col-sm-2 col-md-2">Logo</div>
-	  
-	  <div class="col-sm-10 col-md-10">
-		<ul>
-          <li>Visit</li>
-          <li>Connect</li>
-          <li>Care</li>
-          <li>Learn</li>
-          <li>Events</li>
-		</ul>
-		<ul>
-          <li>Volunteer</li>
-          <li>Give</li>
-		</ul>
-	  </div>  
-    </nav>
     
-    
-    <br><br><br>
-    Homepage Header
-
-
-
-  </section>
-  
-  <section id="pastor-showcase">
-	Pastor Showcase
-		<p> Start rendering home page logic here</p>
-		<p> {{ self.overlay_text }}</p>
-
-		{% if self.image_carousel %}
-		{{ self.image_carousel }}
-		{% endif %}
-  </section>
-  
-  <section id="ads">
-	Carousel of ads
-  </section>
-  
-  <section id="events">
-	Some of the events 
-  </section>
-  
-  <section class="sitemap">
-    <div style="margin-bottom: 20px;">
-	  Address and Subscription  
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-2 col-md-2">
-	    <h4>Visit</h4>
-	    <ul>
-		  <li>Sunday Morning Worship</li>
-		  <li>Exploring Membership</li>
-		  <li>About ALCF</li>
-		  <li>Staff</li>    
-	    </ul>  
-      </div>   
+<!-- Hero
+================================================== -->
+    <div id="hero">
       
-      <div class="col-sm-2 col-md-2">
-      	<h4>Connect</h4>
-      	<ul>
-	     <li>Corporate Prayer & Worship</li> 	
-	     <li>Growth Groups</li> 	
-	     <li>Fellowship Groups</li> 	
-	     <li>Children</li> 	
-	     <li>Student Ministries</li> 	
-	     <li>Recovery/Support Groups</li> 	
-	     <li>Worship Service Ministry</li> 	
-	     <li>Evangelism and Local Outreach</li> 	
-	     <li>Community Involvement</li> 	
-	     <li>International Partners</li> 	
-      	</ul>	      
+      <div class="container" style="top: 155px; left: 8px; position: absolute; z-index: 2; ">
+        <div class="col-md-6 col-lg-6">              
+          <h1>An exciting<br>fellowship of<br>growing believers.</h1><br>
+          <h5>Sunday 10:00 AM</h5>
+          <h6>2440 Leghorn St. Mountain View, CA</h6>
+        </div>
+        <div class="col-md-6 col-lg-6"></div> 
       </div>
-         
-      <div class="col-sm-2 col-md-2">
-	    <h4>Care</h4>
-      	<ul>
-	     <li>One-to-One Support</li>
-	     <li>Recovery/Support Groups</li>
-	     <li>Classified Acts</li> 	
-      	</ul>
-
-      </div>   
       
-      <div class="col-sm-2 col-md-2">
-	    <h4>Learn</h4>   
-      	<ul>
-	     <li>Messages</li>
-      	 <li>Classes@ALCF</li> 	
-      	</ul>
+      <div class="container" style="top: 485px; padding-left: 0; position: absolute; z-index: 2; width: 100%;">
+        <div class="col-md-6 col-lg-6" style="padding-left: 0;">              
+          <ul id="soc-media" class="ss-icon">
+            <li>&#xF610;</li>
+            <li>&#xF611;</li>
+            <li>&#xF641;</li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-6" style="text-align: right; padding-right: 25px;">
+          <form class="w-clearfix hero-cta-form" id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter">
+            <input class="w-input field" type="email" placeholder="Enter your email for weekly updates" name="email" data-name="Email" required="required">
+            <input class="w-button button hero-button" type="submit" value="Subscribe" data-wait="Please wait...">
+          </form>
+          
+  
+        </div>
+      </div>
 
-      </div>   
 
-      <div class="col-sm-2 col-md-2">
-	    <h4>Events</h4>  
-      	<ul>
-	     <li>Events at ALCF</li>
-      	 <li>ALCF-Hosted Events</li> 	
-      	</ul>
 
-      </div> 
       
       
-      <div class="col-sm-2 col-md-2">
-	    <h4>Volunteer</h4>  
-      	<ul>
-	     <li>Opportunities Within ALCF</li>
-	     <li>Local and Global Outreach</li> 	
-      	</ul>
-      </div>   
-      
-      <div class="col-sm-2 col-md-2">
-	    <h4>Give</h4>  
-      	<ul>
-	     <li>Online Giving and Donations</li> 	
-      	</ul>
 
-      </div>   
+      <div id="hero-image"></div>      
 
     </div>
 
-  </section>
+
+<!-- Carousel
+================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+        
+        
+          <img class="first-slide" src="./assets/images/feature_1.jpg" alt="First slide">
+
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+
+          <img class="second-slide" src="./assets/images/feature_2.jpg" alt="Second slide">
+
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+
+          <img class="third-slide" src="./assets/images/feature_1.jpg" alt="Third slide">
+
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="tile news-event col-md-4 col-lg-4">
+          <img src="./assets/images/tile_WOW.jpg" alt="Generic placeholder image" width="100%" height="200">
+          
+          <div>
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>            
+            <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+        <div class="tile news-event col-md-4 col-lg-4">
+          <img src="./assets/images/tile_baptism.jpg" alt="Generic placeholder image" width="100%" height="200">
+          
+          <div>
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>            
+            <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+        <div class="tile news-event col-md-4 col-lg-4">
+          <img src="./assets/images/tile_CD.jpg" alt="Generic placeholder image" width="100%" height="200">
+          
+          <div>
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>            
+            <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      <div class="row" style="margin-top: -28px;">
+        <div class="tile news-event col-md-4 col-lg-4">
+          <img src="./assets/images/tile_EFGB.jpg" alt="Generic placeholder image" width="100%" height="200">
+          
+          <div>
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>            
+            <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+        <div class="tile news-event col-md-4 col-lg-4">
+          <img src="./assets/images/tile_GrowthGroups.jpg" alt="Generic placeholder image" width="100%" height="200">
+          
+          <div>
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>            
+            <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+        <div class="tile news-event col-md-4 col-lg-4">
+          <img src="./assets/images/tile_hospitality.jpg" alt="Generic placeholder image" width="100%" height="200">
+          
+          <div>
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>            
+            <p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+     
+
+
+<!-----------------------------------
+ //
+ // Modal
+ //
+ //---------------------------------->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-image: url('./assets/images/modal_CP_NCHM.jpg'); background-position: center center; background-size: cover; height: 200px; ">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <h2>New Creation Home</h2>
+      
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-md-5 col-lg-5">
+			
+			<h3>Ways to Volunteer at NCHM</h3>
+            <ul>
+	          <li>Help Provide Childcare</li>
+	          <li>Assist with Home Supervision</li>
+	          <li>Provide Dinner for a Parenting Class</li>
+	          <li>Teach a Parenting or Life Skills Class</li>
+	          <li>Be a Tutor or Mentor Mom</li>
+	          <li>Provide Transportation</li>
+	          <li>Yard Work, House Maintenance or Car Repairs</li>
+            </ul>
+			<p><a href="sub-index.html">Learn more about this.</a></p>      
+
+            
+            <br><br>
+            
+            <h3>Contact Information</h3>
+            <p>
+	           <strong>Joyce del Rosario</strong><br>
+Executive Director<br>
+(650) 321-3109<br>
+<a href="#">joyce@newcreationhome.org</a>
+            </p>
+            
+            
+	 	          
+          </div>
+			
+          <div class="col-md-7 col-lg-7">
+			<iframe width="500px" height="300px" src="https://www.youtube.com/embed/sm-NjYuEKus" frameborder="0" allowfullscreen></iframe>	          
+          </div>
+	        
+        </div>
+
+
+
+
+      
+      
+     
+      
+      
+      
+      
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- End of Modal -->
+
+
+
+
+    </div><!-- /.container -->
+    
+
+
+    <!-- FOOTER -->
+    <footer>
+
+	      <div class="container" style="padding-left: 0; width: 100%;">
+	      
+	        <div class="row" style="padding: 20px 0;">	        
+	          <div class="col-md-6 col-lg-6" style="padding-left: 0;">
+		        <small>2440 Leghorn Street<br>
+                Mountain View, CA 94043<br></small>
+                <strong>(650) 210-9340</strong>    
+	          </div>              
+              <div class="col-md-6 col-lg-6" style="padding-left: 0; text-align: right;">
+	            <form class="w-clearfix hero-cta-form" id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter" style="position: relative; right: -15px;">
+                  <input class="w-input field" type="email" placeholder="Enter your email for weekly updates" name="email" data-name="Email" required="required">
+                  <input class="w-button button hero-button" type="submit" value="Subscribe" data-wait="Please wait...">
+                </form>
+
+              </div>              
+
+            </div>  
+	        
+	        <div class="row sitemap" style="padding: 20px 0 0 0;">
+	          <div class="row" style="padding-left: 0; padding-bottom: 0;">
+			    <div class="col-md-2 col-lg-2" style="padding-left: 0;">
+			      <h5>Visit</h5>
+				  <ul>
+					<li>Sunday Morning Worship</li>
+					<li>About</li>
+					<li>Exploring Membership</li>
+					<li>Staff</li> 
+				  </ul>  
+			    </div> 
+	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
+	              <h5>Connect</h5>
+	              <ul>
+					<li>Sunday Service</li>
+					<li>Morning Prayer</li>
+					<li>Intercessory Prayer</li>
+					<li>Growth Groups</li> 
+					<li>Children &amp; Youth</li>
+					<!--
+					<li>Fellowship Groups</li>
+					<li>Recovery/Support Groups</li>
+					<li>WSM</li>
+					<li>Local Outreach</li>
+					<li>After School</li>
+					<li>Community Partners</li>
+					<li>Global Partners</li>
+					<li>Events</li> 
+				    -->
+				  </ul>  
+	            </div> 
+	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
+	              <h5>Care</h5>
+	              <ul>
+		            <li>One-to-One</li>
+		            <li>Groups</li>
+	              </ul>
+	            </div> 
+	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
+	              <h5>Learn</h5>
+	              <ul>
+		            <li>Messages</li>
+		            <li>Classes@ALCF</li>
+	              </ul>
+	            </div>   
+			    <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
+			      <h5>Volunteer</h5>
+			      <ul>
+				    <li>WSM</li>
+				    <li>Children &amp; Youth</li>
+				    <li>Outreach</li>  
+			      </ul>
+			    </div> 
+	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
+	              <h5>Give</h5>
+	              <ul>
+		            <li>myalcf</li>
+	              </ul>
+	            </div>  	            
+              </div>  
+	        </div>            
+	
+	
+	        <div class="row" style="padding: 20px 0 0 0;">
+		      <div class="col-md-6 col-lg-6" style="padding-left: 0;">              
+	            <small>&copy; 2015 Abundant Life Christian Fellowship</small>
+	          </div>
+	          <div class="col-md-6 col-lg-6" style="text-align: right;">
+	            <ul id="soc-media-footer" class="ss-icon">
+	              <li>&#xF610;</li>
+	              <li>&#xF611;</li>
+	              <li>&#xF641;</li>
+	            </ul>
+	          </div>
+	        </div>
+	
+	      </div>
+
+      </footer>
 
 {% endblock %}
