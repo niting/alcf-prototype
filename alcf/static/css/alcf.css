@@ -34,3 +34,13 @@ nav li {
   background-color: rgba(30,0,88, 1);
   color: #FFF;	
 }
+
+
+#main-nav {
+  height: 50px;
+}
+
+.header-image {
+  background-color: rgba(30,0,88, 1);
+  color: #FFF;
+}
