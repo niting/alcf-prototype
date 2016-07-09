@@ -33,6 +33,9 @@ class PageCardBlock(blocks.StructBlock):
     caption = blocks.CharBlock()
     text = blocks.RichTextBlock()
 
+    class Meta:
+        template = 'home/page_card_block.html'
+
 """ Different types of pages """
 class MainPage(Page):
     """ Main pages that branch out from the HomePage """
