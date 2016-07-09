@@ -33,11 +33,25 @@ class PageCardBlock(blocks.StructBlock):
     caption = blocks.CharBlock()
     text = blocks.RichTextBlock()
 
+    class Meta:
+        template = 'home/page_card_block.html'
+
 """ Different types of pages """
 class MainPage(Page):
     """ Main pages that branch out from the HomePage """
     """ Care, Connect, Events, Give, Learn, Visit, Volunteer """
     subpage_types = ['InfoPage']
+    page_card_carousel = StreamField([('page_card_carousel',
+        blocks.ListBlock(PageCardBlock()))], null=True)
+    body = StreamField([
+        ('heading', blocks.CharBlock()),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock()),
+    ],blank=True, default="")
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('body'),
+        StreamFieldPanel('page_card_carousel'),
+    ]
 
 class InfoPage(Page): 
     """ These are pages that branch out from the MainPage """
