@@ -1,0 +1,205 @@
+<link rel="import"
+      href="../bower_components/polymer/polymer.html">
+
+<style>
+.cbp-hrmenu > ul > li.cbp-hropen a, .cbp-hrmenu > ul > li.cbp-hropen > a:hover {
+  background: #FAFAFA;
+}	
+
+.cbp-hrmenu .cbp-hrsub {
+  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(255,255,255,1) 7px, rgba(255,255,255,0.96) 41%,rgba(255,255,255,0.91) 85%,rgba(255,255,255,0.83) 100%);
+
+  border-left: 1px solid #BBB;
+  border-right: 1px solid #BBB;
+}
+</style>    
+
+
+<dom-module id="alcf-nav">
+ 
+
+  <template>
+    <!-- bind to the "owner" property -->
+    <div class="navbar-wrapper">
+      <div class="container">
+      
+        <a class="navbar-brand" href="../index.html" style="background-image: url('../assets/images/ALCF_logo_black.png'); background-size: 100%; width: 100px; height: 50px; left: 40px; position: absolute; z-index: 9;">
+        </a>
+
+                
+				<nav id="cbp-hrmenu" class="cbp-hrmenu">
+					<ul>
+						<li>
+							<a href="#">Visit</a>
+							<div class="cbp-hrsub">
+								<div class="cbp-hrsub-inner"> 
+									<div>
+										<h4>Welcome</h4>
+										<ul>
+											<li><a href="#">Sunday Morning Worship</a></li>
+										</ul>
+									</div>
+									<div>
+										<h4>About</h4>
+										<ul>
+											<li><a href="#">Who We Are</a></li>
+											<li><a href="#">Exploring Membership</a></li>
+											<li><a href="#">Staff</a></li>
+										</ul>
+									</div>
+								</div><!-- /cbp-hrsub-inner -->
+							</div><!-- /cbp-hrsub -->
+						</li>
+						<li>
+							<a href="#">Connect</a>
+							<div class="cbp-hrsub">
+							  <div class="cbp-hrsub-inner">
+								<div>
+										<h4>Worshipping God</h4>
+										<ul>
+											<li><a href="#">Sunday Service</a></li>
+											<li><a href="#">Morning Prayer</a></li>
+											<li><a href="#">Intercessory Prayer</a></li>
+										</ul>
+
+
+									</div>
+								<div>
+										<h4>Growing in Christ</h4>
+										<ul>
+											<li>
+											  <a href="#">Growth Groups</a><br>
+											  <small style="color: #CCC; position: relative; top: -10px; font-style: italic;">Community home groups</small>
+											</li>
+											<li>
+											  <a href="#">Fellowship Groups</a><br>
+											  <small style="color: #CCC; position: relative; top: -10px; font-style: italic;">Age, stage, gender-appropriate</small>
+											</li>
+
+											<li>
+											  <a href="#">Children</a><br>
+											  <small style="color: #CCC; position: relative; top: -10px; font-style: italic;">Safari Kids Infants-5th Grade</small>
+											</li>
+											<li>
+											  <a href="#">Youth</a><br>
+											  <small style="color: #CCC; position: relative; top: -10px; font-style: italic;">Junior & Senior High students</small>
+											</li>
+                                            <li>
+
+											  <a href="#">Support Groups</a><br>
+											  <small style="color: #CCC; position: relative; top: -10px; font-style: italic;">Anger management, coping, etc.</small>
+											</li>
+										</ul>
+									</div>
+								<div>
+<div>
+
+										<h4>Serving One Another</h4>
+										<ul>
+											<li><a href="#">Worship Service Ministries</a></li>
+											<li><a href="#">Children</a> &amp; <a href="#">Youth</a></li>	
+
+										</ul>
+
+										<h4>Reaching Out To All</h4>
+										<ul>
+											<li><a href="../connect/local-outreach.html">Evangelism &amp; Local Outreach</a></li>
+											<li><a href="../connect/community-involvement.html">Community Involvement</a></li>
+											<li><a href="../connect/global-partnerships.html">International Partners</a></li>
+										</ul>
+
+
+
+									</div>
+
+
+								</div><!-- /cbp-hrsub-inner -->
+							  </div>
+                              <div style="
+  padding: 10px 0;
+  margin-top: 35px;
+  margin-bottom: -48px;
+  text-align: center;
+  border-top: 1px solid rgba(40,0,145, 1);
+  border-bottom: 1px solid #BBB;">
+							    <div>
+   						          <a href="events.html" style="background: none; color: #337ab7; ">View all <strong>Events at ALCF</strong></a>
+							    </div>
+						      </div>
+							</div><!-- /cbp-hrsub -->
+							
+						</li>
+						<li>
+							<a href="#">Care</a>
+							<div class="cbp-hrsub">
+								<div class="cbp-hrsub-inner"> 
+									<div style="height: 350px;">
+										<h4>Support</h4>
+										<ul>
+											<li><a href="#">One-to-one</a></li>
+											<li><a href="#">Jobs</a></li>
+											<li><a href="#">Groups</a></li>
+
+										</ul>
+										
+										<div style="width: 300px; height: 200px; position: relative; top: -105px; left: 200px;">
+										<img src="../assets/images/tile_GrowthGroups.jpg" alt="Generic placeholder image" width="100%" height="150">
+          
+          <div style="color: #333; font-size: 90%; margin-top: 20px;">
+            <h2 style="font-size: 150%; margin-bottom: 5px;">Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>   	
+										</div>
+									</div>
+									
+									
+									<div style="width: 300px; height: 200px; position: relative; top: -305px; left: 550px;">
+										<img src="../assets/images/tile_serve.jpg" alt="Generic placeholder image" width="100%" height="150">
+          
+          <div style="color: #333; font-size: 90%; margin-top: 20px;">
+            <h2 style="font-size: 150%; margin-bottom: 5px;">Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac.</p>   	
+										</div>
+									</div>
+
+									
+									
+								</div><!-- /cbp-hrsub-inner -->
+							</div><!-- /cbp-hrsub -->
+							</div>
+						</li>
+						<li>
+							<a href="#">Learn</a>
+							<div class="cbp-hrsub">
+								<div class="cbp-hrsub-inner"> 
+									<div>
+									    <h4>Teachings</h4>
+										<ul>
+											<li><a href="#">Messages</a></li>
+											<li><a href="#">Classes@ALCF</a></li>
+										</ul>
+									</div>
+								</div><!-- /cbp-hrsub-inner -->
+							</div><!-- /cbp-hrsub -->
+						</li>
+
+					</ul>
+				</nav>
+
+              <ul class="nav navbar-nav user-cta">
+                <li><a href="#serve">Volunteer</a></li>
+                <li><a id="give-cta" href="#give">Give</a></li>
+              </ul>
+
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "alcf-nav"    
+    });
+
+  </script>
+  
+</dom-module>
+
