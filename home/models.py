@@ -15,15 +15,8 @@ class CarouselBlock(blocks.StructBlock):
     """ Single Carousel slide"""
     image = ImageChooserBlock() 
     caption = blocks.CharBlock()
-    text = blocks.RichTextBlock()
+    text = blocks.TextBlock()
     link = blocks.PageChooserBlock()
-
-    class Meta:
-        template = 'home/carousel_block.html'
-
-class Carousel(blocks.ListBlock): 
-    """ Multiple Carousel blocks """
-    carousel_block = CarouselBlock()
 
 class PageCardBlock(blocks.StructBlock):
     """ Represents the card for a page. Has a link, text and some """
@@ -70,7 +63,6 @@ class HomePage(Page):
             related_name='+'
     )
     showcase_box = RichTextField(null=True, blank=True) 
-
     overlay_text = models.CharField(max_length = 250)
     image_carousel = StreamField([('carousel', CarouselBlock())])
     page_card_carousel = StreamField([('page_card_carousel',
