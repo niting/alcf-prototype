@@ -1,0 +1,27 @@
+{% load wagtailimages_tags %}
+<div class="row">
+				<div class="tile news-event col-md-4 col-lg-4">
+								{% image value.left.image height-200 width="100%" %}
+								<div>
+												<h2>{{ value.left.heading }}</h2>
+												<p>{{ value.left.text }}</p>            
+												<p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+								</div>
+				</div><!-- /.col-lg-4 -->
+				<div class="tile news-event col-md-4 col-lg-4">
+								{% image value.middle.image height-200 width="100%" %}
+								<div>
+												<h2>{{ value.middle.heading }}</h2>
+												<p>{{ value.middle.text }}</p>            
+												<p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+								</div>
+				</div><!-- /.col-lg-4 -->
+				<div class="tile news-event col-md-4 col-lg-4">
+								{% image value.right.image height-200 width="100%" %}
+								<div>
+												<h2>{{ value.right.heading }}</h2>
+												<p>{{ value.right.text }}</p>            
+												<p><a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#myModal">View details &raquo;</a></p>
+								</div>
+				</div>
+</div>

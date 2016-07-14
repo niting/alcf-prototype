@@ -21,13 +21,19 @@ class CarouselBlock(blocks.StructBlock):
 class PageCardBlock(blocks.StructBlock):
     """ Represents the card for a page. Has a link, text and some """
     """ image. """
-    image = ImageChooserBlock()
-    link = blocks.PageChooserBlock()
-    caption = blocks.CharBlock()
-    text = blocks.RichTextBlock()
+    image = ImageChooserBlock(required=False)
+    link = blocks.PageChooserBlock(required=False)
+    heading = blocks.CharBlock(required=False)
+    text = blocks.TextBlock(required=False)
 
-    class Meta:
-        template = 'home/page_card_block.html'
+class PageCardBlockRow(blocks.StructBlock):
+    """ A row of PageCardBlock objects. There are three of them in a row """
+    left = PageCardBlock()
+    middle = PageCardBlock(required=False)
+    right = PageCardBlock(required=False)
+
+    class Meta: 
+        template = 'home/page_card_block_row.html'
 
 """ Different types of pages """
 class MainPage(Page):
@@ -65,13 +71,13 @@ class HomePage(Page):
     showcase_box = RichTextField(null=True, blank=True) 
     overlay_text = models.CharField(max_length = 250)
     image_carousel = StreamField([('carousel', CarouselBlock())])
-    page_card_carousel = StreamField([('page_card_carousel',
-        blocks.ListBlock(PageCardBlock()))], null=True)
+    page_card_rows = StreamField([('page_card_block_row', PageCardBlockRow())],
+            null=True)
     content_panels = Page.content_panels + [
             EmbedVideoChooserPanel('showcase_video'),
             FieldPanel('showcase_box'),
             FieldPanel('overlay_text'),
             StreamFieldPanel('image_carousel'),
-            StreamFieldPanel('page_card_carousel'),
+            StreamFieldPanel('page_card_rows'),
     ]
 
