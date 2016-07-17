@@ -162,104 +162,58 @@ Executive Director<br>
 
 
     <!-- FOOTER -->
-    <footer>
+		<footer>
 
-	      <div class="container" style="padding-left: 0; width: 100%;">
-	      
-	        <div class="row" style="padding: 20px 0;">	        
-	          <div class="col-md-6 col-lg-6" style="padding-left: 0;">
-		        <small>2440 Leghorn Street<br>
-                Mountain View, CA 94043<br></small>
-                <strong>(650) 210-9340</strong>    
-	          </div>              
-              <div class="col-md-6 col-lg-6" style="padding-left: 0; text-align: right;">
-	            <form class="w-clearfix hero-cta-form" id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter" style="position: relative; right: -15px;">
-                  <input class="w-input field" type="email" placeholder="Enter your email for weekly updates" name="email" data-name="Email" required="required">
-                  <input class="w-button button hero-button" type="submit" value="Subscribe" data-wait="Please wait...">
-                </form>
+		<div class="container" style="padding-left: 0; width: 100%;">
 
-              </div>              
+						<div class="row" style="padding: 20px 0;">	        
+										<div class="col-md-6 col-lg-6" style="padding-left: 0;">
+														<small>2440 Leghorn Street<br>
+																		Mountain View, CA 94043<br></small>
+														<strong>(650) 210-9340</strong>    
+										</div>              
+										<div class="col-md-6 col-lg-6" style="padding-left: 0; text-align: right;">
+														<form class="w-clearfix hero-cta-form" id="wf-form-Newsletter" name="wf-form-Newsletter" data-name="Newsletter" style="position: relative; right: -15px;">
+																		<input class="w-input field" type="email" placeholder="Enter your email for weekly updates" name="email" data-name="Email" required="required">
+																		<input class="w-button button hero-button" type="submit" value="Subscribe" data-wait="Please wait...">
+														</form>
 
-            </div>  
-	        
-	        <div class="row sitemap" style="padding: 20px 0 0 0;">
-	          <div class="row" style="padding-left: 0; padding-bottom: 0;">
-			    <div class="col-md-2 col-lg-2" style="padding-left: 0;">
-			      <h5>Visit</h5>
-				  <ul>
-					<li>Sunday Morning Worship</li>
-					<li>About</li>
-					<li>Exploring Membership</li>
-					<li>Staff</li> 
-				  </ul>  
-			    </div> 
-	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
-	              <h5>Connect</h5>
-	              <ul>
-					<li>Sunday Service</li>
-					<li>Morning Prayer</li>
-					<li>Intercessory Prayer</li>
-					<li>Growth Groups</li> 
-					<li>Children &amp; Youth</li>
-					<!--
-					<li>Fellowship Groups</li>
-					<li>Recovery/Support Groups</li>
-					<li>WSM</li>
-					<li>Local Outreach</li>
-					<li>After School</li>
-					<li>Community Partners</li>
-					<li>Global Partners</li>
-					<li>Events</li> 
-				    -->
-				  </ul>  
-	            </div> 
-	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
-	              <h5>Care</h5>
-	              <ul>
-		            <li>One-to-One</li>
-		            <li>Groups</li>
-	              </ul>
-	            </div> 
-	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
-	              <h5>Learn</h5>
-	              <ul>
-		            <li>Messages</li>
-		            <li>Classes@ALCF</li>
-	              </ul>
-	            </div>   
-			    <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
-			      <h5>Volunteer</h5>
-			      <ul>
-				    <li>WSM</li>
-				    <li>Children &amp; Youth</li>
-				    <li>Outreach</li>  
-			      </ul>
-			    </div> 
-	            <div class="col-md-2 col-lg-2" style="padding-left: 0; padding-bottom: 5px;">
-	              <h5>Give</h5>
-	              <ul>
-		            <li>myalcf</li>
-	              </ul>
-	            </div>  	            
-              </div>  
-	        </div>            
-	
-	
-	        <div class="row" style="padding: 20px 0 0 0;">
-		      <div class="col-md-6 col-lg-6" style="padding-left: 0;">              
-	            <small>&copy; 2015 Abundant Life Christian Fellowship</small>
-	          </div>
-	          <div class="col-md-6 col-lg-6" style="text-align: right;">
-	            <ul id="soc-media-footer" class="ss-icon">
-	              <li>&#xF610;</li>
-	              <li>&#xF611;</li>
-	              <li>&#xF641;</li>
-	            </ul>
-	          </div>
-	        </div>
-	
-	      </div>
+										</div>              
 
-      </footer>
+						</div>  <!-- class row --> 
+
+						<div class="row sitemap" style="padding: 20px 0 0 0;">
+										<div class="row" style="padding-left: 0; padding-bottom: 0;">
+														<!--Various footer menu options -->
+														{% for child_page in self.get_children %}
+														<div class="col-md-2 col-lg-2" style="padding-left: 0;{% if not forloop.counter0 %} padding-bottom: 5px;{% endif %}">
+																		<h5>{{ child_page }}</h5>
+																		<ul>
+																						{% for info_page in child_page.get_children %}
+																						<li>{{ info_page }}</li>
+																						{% endfor %}
+																		</ul>  
+														</div> 
+														{% endfor %}
+										</div>  
+						</div>  <!-- row-sitemap -->
+
+
+						<div class="row" style="padding: 20px 0 0 0;">
+										<div class="col-md-6 col-lg-6" style="padding-left: 0;">              
+														<small>&copy; 2016 Abundant Life Christian Fellowship</small>
+										</div>
+										<div class="col-md-6 col-lg-6" style="text-align: right;">
+														<ul id="soc-media-footer" class="ss-icon">
+																		<li>&#xF610;</li>
+																		<li>&#xF611;</li>
+																		<li>&#xF641;</li>
+														</ul>
+										</div>
+						</div>
+
+		</div>
+
+		</footer>
 
 {% endblock %}
